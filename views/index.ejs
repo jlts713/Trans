@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>TRANS*</title>
+  
+  <!---meta description-->
+  <meta property="og:title" content="TRANS*"/>
+  <meta property="og:description" content=""/>
+  <meta property="og:url" content=""/> <!--ADD this url-->
+  <meta property="og:image" content=""/><!--ADD an image-->
+  
+  <!--font-->
+  <!--link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'-->
+  <!--css-->
+  <link rel="stylesheet" type="text/css" href="./stylesheets/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="./stylesheets/jquery.datetimepicker.css"/>
+  <link rel="stylesheet" type="text/css" href="./stylesheets/vis.css"/>
+  <link rel="stylesheet" type="text/css" href="./stylesheets/timetable.css"/>
+  <link rel="stylesheet" type="text/css" href="./stylesheets/style.css"/> <!--self-defined css should include later-->
+
+
+
+  </head>
+<body>
+  <div id="wrapper" class="bg-white">
+  
+  <div id="title" class="container bg-white">
+    <p class="timeform-title">TRANS*</p>
+    <div class="divider"></div>
+  </div>
+  <!--START | timeform-->
+  <div id="timeform" class="bg-bluegreen">
+    <div class="container">
+    
+    <div class="row">
+      <div class="col-md-12">
+      <form id="time-form" class="form-inline " role="form">
+        <!--pick time-->
+        <div class="row">
+        <div class="form-group my-form-item col-md-4">
+          <label class="text-white" for="start-time">預計出發時間</label>
+          <input id="start-time" type="" class="form-control text-bluegreen" placeholder="預計出發時間"/>
+        </div>
+        <div class="form-group my-form-item col-md-4">
+          <label class="text-white" for="end-time">預計抵達時間</label>
+          <input id="end-time" type="" class="form-control text-bluegreen" placeholder="預計抵達時間"/>
+        </div>
+        <div class="col-md-4">
+          <button type="button" class="btn btn-default" onclick="setTimeline('start-time','end-time')">排行程囉！</button>
+        </div>
+        </div>
+        <!--submit-->
+        
+      </form>
+      </div>
+    </div>
+    </div><!--/.container-->
+  </div><!--/#timeform-->
+  
+  <!--START | timeline-->
+  <div id="section-timeline" class="section bg-light">
+    <div class="container-fluid">
+      <div id="timeline-left" class="timeline-left-block">
+        <p class="text-bluegreen timeline-text">My Timeline</p>
+      </div>
+      <div id="timeline-right" class="">
+        <div id="timeline"></div>
+      </div>
+      
+    </div><!--/.container-fluid-->
+  </div><!--/#timeline-->
+  
+  </div>
+
+  <!--START | timetable-->
+  <div id="section-timetable" class="section">
+    <div class="container-fluid">
+      <!--div class="left-block">
+      </div-->
+      <section class="block-content t-block-teal l-block-spacing">
+        <div class="l-contained">
+          
+          <ul class="timeline-list">
+            <li>
+              <div id="trans-form-one" class="transform">
+                <input id="start-place" type="text" class="transplace" placeholder="起點"/>
+                <div class="radio">
+                  <label><input type="radio" name="transchoice-one" id="train-one" value="train" checked>搭火車</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="transchoice-one" id="hsr-one" value="hsr">搭高鐵</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="transchoice-one" id="bus-one" value="bus">搭公車</label><br>
+                  <input id="bus-one-num" type="text" class="transplace" placeholder="公車幾號線"/>
+                </div>
+                
+                <input id="trans-place-one" type="text" class="transplace" placeholder="轉乘點1"/><br>
+                <button type="button" class="btn btn-default" onclick="clickTimetableBtnOne()">時刻表</button> <!---change the function here!!! -->
+              </div>
+              
+
+              <div id="trans-one" class="content">
+                <div id="timetable-one">
+                </div>
+              </div>
+            </li>
+            <li>
+              <div id="trans-form-two" class="transform">
+                <input id="trans-place-two" type="text" class="transplace" placeholder="轉乘點2"/>
+                  <div class="radio">
+                  <label><input type="radio" name="transchoice-two" id="train-two" value="train" checked>搭火車</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="transchoice-two" id="hsr-two" value="hsr">搭高鐵</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="transchoice-two" id="bus-two" value="bus">搭公車</label><br>
+                  <input id="bus-two-num" type="text" class="transplace" placeholder="公車幾號線"/>
+                </div>
+                <input id="end-place" type="text" class="transplace" placeholder="終點"/><br>
+                <button type="button" class="btn btn-default" onclick="clickTimetableBtnTwo()">時刻表</button>
+              </div>
+                
+                
+              <div id="trans-two" class="content">  
+                <div id="timetable-two">
+                </div>
+              </div>
+            </li>
+            <li>
+            </li> 
+          </ul> 
+        </div>
+      </section>
+    </div><!--/.container-fluid-->
+  </div><!--/#timetable-->
+
+  <!--script-->
+  <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script-->  <!--put jQuery before bootstrap-->
+  <script type="text/javascript" src="./javascripts/jquery.js"></script>
+  <script type="text/javascript" src="./javascripts/bootstrap.js"></script>
+  <script type="text/javascript" src="./javascripts/jquery.datetimepicker.full.min.js"></script>
+  <script src="./javascripts/vis.js"></script>
+  <script src="./javascripts/timeline.js"></script>
+  <!--script src="./js/timetable.js"></script-->
+  <!--script type="text/javascript" src="./js/jquery.easing.1.3.js"></script--> <!--for scroll page effect-->
+</body>
+
+  
+    <script>
+  //<!--datetime picker plugin-->
+  $('#start-time').datetimepicker({
+    format:'Y.m.d H:i',
+    lang:'en'
+  });
+  $('#end-time').datetimepicker({
+    format:'Y.m.d H:i',
+    lang:'en'
+  });
+
+	function getTrainData(startstop, endstop, starttime, endtime, timetableId) {
+
+	  	$.post('http://localhost:3000/getTrainData',
+        { startstop: startstop, endstop : endstop, starttime: starttime, endtime: endtime},
+        function(returnedData){
+		        console.log(JSON.stringify(returnedData));
+            //console.log()
+		        console.log(returnedData.length);
+            console.log(timetableId);
+            if(timetableId == 1){
+
+              updateTrainItemList(returnedData, timetableId);
+              console.log(timetable_one_itemlist);
+              //addStyle(timetable_one_itemlist, "train");    //add className style
+              timetable_one_items = timetable_one_itemlist;
+              drawTimetable(timetable_one, timetable_one_items);  //draw timeTable
+            }else if(timetableId == 2){
+               console.log("id is 2!!!!!!!!")
+              updateTrainItemList(returnedData, timetableId);
+              console.log(timetable_two_itemlist);
+              //addStyle(timetable_two_itemlist, "train");    //add className style
+              timetable_two_items = timetable_two_itemlist;
+              drawTimetable(timetable_two, timetable_two_items);  //draw timeTable
+            }  
+		});
+	};
+
+	function getBusData(busnum, startstop, timetableId){
+
+		$.post('http://localhost:3000/getBusData', 
+        { busNum: busnum, startstop : startstop},
+        /*{ busNum: "235", start : "重新大橋"},*/ 
+		    function(returnedData){
+		        console.log(returnedData);
+
+            if(timetableId == 1){
+              updateBusItemList(returnedData, timetableId);
+              //addStyle(timetable_one_itemlist, "train");    //add className style
+              timetable_one_items = timetable_one_itemlist;
+              drawTimetable(timetable_one, timetable_one_items);  //draw timeTable
+            }else if(timetableId == 2){
+              updateBusItemList(returnedData, timetableId);
+              //addStyle(timetable_two_itemlist, "train");    //add className style
+              timetable_two_items = timetable_two_itemlist;
+              console.log("!!!!!!!!!!!!!before print!!!!!!!!!!!!!!!!!");
+              console.log(timetable_two_itemlist);
+              drawTimetable(timetable_two, timetable_two_items);  //draw timeTable
+            }   
+		});
+	};
+	function getHighData(){
+		$.post('http://localhost:3000/getHighData', { start: "XXX", end : "XXX"}, 
+		    function(returnedData){
+		         console.log(returnedData);
+             //addStyle(timetable_one_itemlist, "hsr");    //add className style
+            //timetable_one_items = timetable_one_itemlist;
+            //drawTimetable(timetable_one, timetable_one_items);  //draw timeTable  
+		});
+	};
+  </script>
+
+</html>

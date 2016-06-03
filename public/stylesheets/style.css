@@ -1,0 +1,225 @@
+/*------------------------------------------*/
+/* GENERAL STYLE
+/*------------------------------------------*/
+body{
+	font-family: Microsoft JhengHei, sans-serif;	
+	/*min-width:544px;*/
+	padding-top: 230px;
+}
+
+#wrapper{
+	position:fixed;
+	top:0px;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	z-index: 100;
+}
+
+div .divider{
+	width: 80px;
+	height: 2px;
+	background-color: #64b6ac;
+	margin: 5px auto;
+	position: relative;
+    top: -7px;
+    left: -6px;
+}
+
+.btn {
+  color: #ffffff;
+  /*font-size: 20px;*/
+  background: #64b6ac;
+  font-weight:bold;
+  /*padding: 10px 20px 10px 20px;*/
+  text-decoration: none;
+}
+
+.btn:hover {
+  color:#64b6ac ;
+  background: #ffffff;
+  text-decoration: none;
+}
+
+/*------------------------------------------*/
+/* COLOR
+/*------------------------------------------*/
+.bg-bluegreen{
+	background-color: #64B6AC;
+}
+.bg-white{
+	background-color: #ffffff;
+}
+.text-white{
+	color:white;
+}
+.border-white{
+	color: white;
+}
+
+.bg-light{
+	background-color: #FFF3EE;
+}
+
+.text-bluegreen{
+	color: #64B6AC;
+}
+
+.text-black{
+	color: black;
+}
+
+.style-train{
+	color:black;
+	background-color:#f1948a;
+	border-style:none;
+	border-radius:10px;
+	height:10px;
+}
+
+.style-train:hover{
+	background-color:rgb(252, 70, 74);
+	cursor:pointer;
+}
+
+.style-hsr{
+	color:black;
+	background-color:#f7dc6f;
+	border-style:none;
+	border-radius:10px;
+	height:10px;
+}
+.style-hsr:hover{
+	background-color:rgb(244, 207, 48);
+	cursor:pointer;
+}
+
+.style-bus{
+	color:black;
+	background-color:#85c1e9;
+	border-style:none;
+	border-radius:10px;
+	height:10px;
+}
+.style-bus:hover{
+	background-color:rgb(60, 182, 227);
+	cursor:pointer;
+}
+
+/*------------------------------------------*/
+/* OVERRIDE VIS ITEM
+/*------------------------------------------*/
+.vis-item{
+	border-width:0px;
+}
+
+.vis-item .vis-item-content{
+	position:relative;
+	top:-8px;
+	font-size:10px;
+}
+
+
+/*------------------------------------------*/
+/* title
+/*------------------------------------------*/
+.timeform-title{
+	font-size: 28px;
+	font-weight: bold;
+	text-align: center;
+	margin:2px;
+	position: relative;
+    top: 5px;
+}
+/*------------------------------------------*/
+/* TIMEFORM
+/*------------------------------------------*/
+.timeline-text{
+	font-size: 26px;
+	font-weight:bold;
+}
+
+#timeform{
+	padding:20px;
+}
+
+
+#form-content{
+	margin: 30px;
+}
+	.my-form-item{
+		margin:2px 0;
+	}
+	
+	#form-content button{
+		float: right;
+	}
+
+/*------------------------------------------*/
+/* SECTION
+/*------------------------------------------*/
+.section {
+	
+}
+.left-block{
+	width:10%;
+	float:left;
+}
+
+.timeline-left-block{
+	width:16%;
+	float:left;
+}
+
+.right-block{
+	
+}
+
+/*------------------------------------------*/
+/* TIMELINE
+/*------------------------------------------*/
+#section-timeline{
+	padding: 15px;
+}
+
+#timeline-left{
+	margin: 15px 0;
+	text-align:center;
+}
+
+#timeline-right{
+	margin: auto 32px auto 0px;
+}
+/*------------------------------------------*/
+/* TIMETABLE
+/*------------------------------------------*/
+section{
+	margin-left:10%;	/*makesure there's enough space for left-block*/
+}
+
+#section-timetable {
+	position:relative;
+	/*top:100px;*/
+	margin: 20px; 
+}
+
+.transform{
+	position:absolute;
+	left:-15%;
+	min-height:100px;
+}
+	.radio{
+		margin:3px auto;
+	}
+	.transplace{
+		margin:5px 0;
+		width:80%;
+	}
+	
+	.transplace-short{
+		margin:5px 2px;
+		width:10%;
+	}
+.content{
+	min-height:170px;
+}

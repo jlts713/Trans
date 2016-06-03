@@ -1,0 +1,20 @@
+{
+  "name": "practice",
+  "version": "0.0.0",
+  "authors": [
+    "Jack <j5111261112@gmail.com>"
+  ],
+  "description": "express todo list",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "components-font-awesome": "~4.3.0"
+  }
+}
